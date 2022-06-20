@@ -6,14 +6,13 @@ from tensorflow.keras.layers import *
 from tensorflow.keras.models import Sequential
 import matplotlib.pyplot as plt
 
-red = pd.read_csv("data/winedata_red.csv", sep=',')
-white = pd.read_csv("data/winedata_white.csv", sep=',')
+red = pd.read_csv("data/winedata_red.csv", sep=',') # red wine data
+white = pd.read_csv("data/winedata_white.csv", sep=',') # white wine data
 
 
 red['type'] = 1
 white['type'] = 0
 wines = red.append(white, ignore_index = True)
-wines.head()
 X = wines.drop("quality", axis=1)
 y = np.ravel(wines.quality)
 
@@ -33,7 +32,7 @@ from keras.layers import Dense
 model = Sequential()
  
 # Add an input layer
-model.add(Dense(11, activation ='relu', input_shape =(12, )))
+model.add(Dense(12, activation ='relu', input_shape =(12, )))
  
 # Add one hidden layer
 model.add(Dense(24, activation ='relu'))
