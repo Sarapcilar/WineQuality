@@ -34,7 +34,7 @@ model = Sequential()
 # Add an input layer
 model.add(Dense(12, activation ='relu', input_shape =(12, )))
  
-# Add one hidden layer
+# Add six hidden layers
 model.add(Dense(24, activation ='relu'))
 model.add(Dense(48, activation ='relu'))
 model.add(Dense(96, activation ='relu'))
